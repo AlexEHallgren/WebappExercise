@@ -4,13 +4,13 @@ LABEL maintainer="Alexander Hallgren alex.ehallgren@gmail.com"
 
 RUN apk update && apk add bash
 
-COPY requirements.txt /app/
-WORKDIR /app
+COPY requirements.txt /exercise/
+WORKDIR /exercise
 
 RUN pip install -r requirements.txt
 
-COPY /app /app
+COPY app app
 
 ENTRYPOINT [ "python" ]
-CMD [ "app/app.py" ]
+CMD [ "app/manage.py", "runserver", "0.0.0.0:8000" ]
 
