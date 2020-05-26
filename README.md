@@ -1,3 +1,5 @@
+You can run this exercise with Docker or use virtualenv to set it up.
+
 #### Running With Docker
 
 To build and run the project as a Docker container execute these terminal commands:
@@ -7,6 +9,15 @@ docker build . -t webapp-exercise
 docker run -it -p 127.0.0.1:8000:8000 webapp-exercise 
 ```
 
+Or by using the convenience shell script `run-docker.sh`.
+
+#### Running with virtualenv
+
+The project is built using python `3.8.0`. After setting up the virtualenv and installing requirements, start the Django server by running the following command in the top directory:
+
+```
+python app/manage.py runserver 127.0.0.1:8000
+```
 
 ## Notes
 
