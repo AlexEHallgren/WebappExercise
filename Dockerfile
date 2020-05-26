@@ -2,8 +2,6 @@ FROM python:3.8.3-alpine
 
 LABEL maintainer="Alexander Hallgren alex.ehallgren@gmail.com"
 
-RUN apk update && apk add bash
-
 COPY requirements.txt /exercise/
 WORKDIR /exercise
 

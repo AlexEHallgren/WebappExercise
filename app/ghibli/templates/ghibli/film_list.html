@@ -1,0 +1,19 @@
+{% if film_list %}
+    <ul>
+    {% for film in film_list %}
+        <li>{{ film.title }}</a></li>
+        {% if film.people %}
+            <ul>
+                {% for person in film.people %}
+                    <li>{{ person.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No people were found for this film.</p>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    <p>{{ cache_hit }}</p>
+{% else %}
+    <p>No films were available.</p>
+{% endif %}
