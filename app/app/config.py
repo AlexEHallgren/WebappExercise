@@ -1,6 +1,7 @@
 import environ
 import enum
 
+
 @environ.config(frozen=True)
 class AppConfig:
     env = environ.var(default="dev")
@@ -10,5 +11,6 @@ class AppConfig:
         people_url = environ.var(default="https://ghibliapi.herokuapp.com/people")
         film_data_cache_key = "film_data"
     ghibli = environ.group(Ghibli)
+
 
 app_config = AppConfig.from_environ()
